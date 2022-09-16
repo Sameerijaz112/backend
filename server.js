@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
-const PORT = 2020;
+const loadMyvariable=require('./Configiration/LoadmyEnviroment')
+const PORT = process.env.PORT;
 
 
 
 app.listen(PORT,() =>{
 console.log(`Your Application is Launched ${PORT}`)
-console.log(process.env);
+console.log(process.env.PORT);
 })
