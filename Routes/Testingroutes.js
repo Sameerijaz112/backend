@@ -11,8 +11,10 @@ const Router=express.Router()
 
 
 
-const {postTestingData}=require('../controller/Testingcontroller')
+const {postTestingData,getdatatesting}=require('../controller/Testingcontroller')
 Router.post('/formApi',postTestingData)
+Router.post('/GetData',getdatatesting)
+
 
 
 

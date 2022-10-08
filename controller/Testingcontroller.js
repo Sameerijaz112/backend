@@ -13,7 +13,30 @@ try {let Data=req.body
      });
 }
 }
-module.exports={postTestingData}
+
+const getdatatesting = (req,res) => {
+try {
+   let data = 'Okay'
+   res.json({
+      Message:'You Have Reached the Get EndPoint',
+      Data:true,
+      Result:data
+      
+   })
+
+} catch (error) {
+   res.json({
+      Message:error.Message,
+      Data:false,
+      Result:null
+   });
+}
+
+
+}
+
+module.exports={postTestingData,
+   getdatatesting}
 
 
 // const formApi=(req,res)=>{
@@ -27,3 +50,4 @@ module.exports={postTestingData}
         
 //     }
 // }
+

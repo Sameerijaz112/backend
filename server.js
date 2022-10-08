@@ -94,8 +94,11 @@ app.all('*', (req, res, next) => {
 // const _UserManagementRoute = require('./routes/UserManagementRoute');
 // const _AdminManagementRoute = require('./routes/AdminManagementRoute');
 // const _PaymentManagement = require('./routes/PaymentManagementRoute');
-const formvalue =require('./Routes/Testingroutes')
-app.use('/formValue',formvalue)
+const Showdata = require('./Routes/Testingroutes')
+app.use('/Showdata',Showdata);
+const formvalue =require('./Routes/Testingroutes');
+app.use('/formValue',formvalue),
+
 // //*****UsingRoutes*****//
 // app.use('/AdminManagement', _AdminManagementRoute);
 // app.use('/UserManagement',_UserManagementRoute)
