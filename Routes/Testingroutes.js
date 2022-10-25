@@ -13,7 +13,7 @@ const Router=express.Router()
 
 const {postTestingData,getdatatesting}=require('../controller/Testingcontroller')
 Router.post('/formApi',postTestingData)
-Router.post('/GetData',getdatatesting)
+Router.get('/GetData',getdatatesting)
 
 
 
