@@ -94,12 +94,15 @@ app.all('*', (req, res, next) => {
 // const _UserManagementRoute = require('./routes/UserManagementRoute');
 // const _AdminManagementRoute = require('./routes/AdminManagementRoute');
 // const _PaymentManagement = require('./routes/PaymentManagementRoute');
+const _productroutes = require('./Routes/productroutes');
 const Showdata = require('./Routes/Testingroutes')
+http://localhost:8888/ProductManagement/ProductData
 app.use('/Showdata',Showdata);
 const formvalue =require('./Routes/Testingroutes');
 app.use('/formValue',formvalue),
 
 // //*****UsingRoutes*****//
+app.use('/productroutes', _productroutes);
 // app.use('/AdminManagement', _AdminManagementRoute);
 // app.use('/UserManagement',_UserManagementRoute)
 // app.use('/AdminManagement', _AdminManagementRoute);
