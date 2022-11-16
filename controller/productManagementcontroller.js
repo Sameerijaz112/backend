@@ -54,8 +54,52 @@ const GetProductData = async (req, res) => {
         })
     }
 }
+const GetProductById = async (req, res) => {
+    try {
+        const Id = req.params._id;
+        const docToFind = await ProductModel.findOne(
+            { _id:Id },
+            // { status:1 } Projection
+        )
+        res.json({
+            Message:'Data Found Successfuly',
+            Data:true,
+            Result:docToFind
+        })
+    } catch (error) {
+        res.json({
+            Message: error.mesage,
+            Result: null,
+            Data: false
+        })
+    }
+}
+const DeleteProductById = async (req, res) => {
+    try {
+        const Id = req.params._id;
+        const DocToDelete = await ProductModel.updateOne(
+            { _id:Id },
+            { $set:{softDeleteStatus:1} }
+            );
+            // const docToDelete = await ProductModel.deleteOne(
+            //     { _id:Id }
+            // )
+        res.json({
+            Message: 'Document Deleted Successfuly',
+            Data: true,
+            Result: DocToDelete
+        })
+    } catch (error) {
+        res.json({
+            Message: error.mesage,
+            Result: null,
+            Data: false
+        })
+    }
+}
 module.exports = {
     ProductData,
     GetProductData,
-   
+    GetProductById,
+    DeleteProductById,
 }
